@@ -43,7 +43,7 @@ public class Employee {
     }
 
     public void setDepartment(int department) {
-        Department = department;
+        this.Department = department;
         if (department > 0 || department <= 5);
     }
 
@@ -68,8 +68,8 @@ public class Employee {
     }
 
     public Employee(String surName, String name, String patronymic, int department, int salary) {
-        if (department <= 0 || department > 5)
-            throw new IllegalArgumentException("Такого сотрудника не существует");
+        if (department < 1 || department > 5)
+            throw new IllegalArgumentException("Введено невалидное значение department");
         counter++;
         this.SurName = surName;
         this.Name = name;
@@ -91,7 +91,7 @@ public class Employee {
                 "";
     }
     public String getFullName(){
-        return SurName + " " + Name +" "+ Patronymic;
+        return getSurName() + " " +getName() + " " + getPatronymic();
         }
     }
 
